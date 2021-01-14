@@ -1,5 +1,5 @@
 //getting Recipe model for db access
-const Recipe = require("../models/Recipe");
+const Recipe = require("../models/recipe");
 
 //all Recipes
 const recipe_index = (req, res) => {
