@@ -26,10 +26,10 @@ const recipe_details = (req, res) => {
 const recipe_add_post = (req, res) => {
   console.log(req.body); //log to check if HTML body has correct data
 
-  const Recipe = new Recipe(req.body); //create new Recipe using HTML body data
+  const recipe = new Recipe(req.body); //create new Recipe using HTML body data
 
   //check if the Recipe name is already existed
-  Recipe.exists({ name: Recipe.name.toUpperCase() }, function (err, docs) {
+  Recipe.exists({ name: recipe.name.toUpperCase() }, function (err, docs) {
     if (err) {
       console.log(err);
     } else {
@@ -43,7 +43,8 @@ const recipe_add_post = (req, res) => {
       }
       //add new Recipe if Recipe name is different
       else {
-        Recipe.save()
+        recipe
+          .save()
           .then((result) => {
             res.json({ addRecipeResult: "YES" });
           }) //send json result of newly created Recipe
