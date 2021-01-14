@@ -2,7 +2,7 @@
   "name": "recipeappapi",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "App.js",
   "dependencies": {
     "cors": "^2.8.5",
     "ejs": "^3.1.5",
@@ -14,6 +14,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Dung Hong",
   "license": "ISC"
 }

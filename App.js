@@ -1,7 +1,7 @@
 const express = require("express"); //get express
 const mongoose = require("mongoose"); //get mongoose
 
-// const cardController = require("./controllers/cardController");
+const recipeController = require("./controllers/recipesController");
 
 const cors = require("cors");
 
@@ -17,7 +17,7 @@ app.set("view engine", "ejs");
 let PORT = process.env.PORT || 3001;
 //connect to database (MongoDB)
 const dbURI =
-  "mongodb+srv://dunghong123:pass123word456@cluster0.kv48y.mongodb.net/cardAppReact?retryWrites=true&w=majority";
+  "mongodb+srv://dunghong123:pass123word456@cluster0.kv48y.mongodb.net/dhRecipes?retryWrites=true&w=majority";
 mongoose
   .connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then((result) => {
@@ -56,16 +56,17 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
-// //API: get all cards
-// app.get("/all-cards", cardController.card_index);
+//API: get all recipes
+app.get("/all", recipeController.recipe_index);
 
-// //API: get card details
-// app.get("/detail/:id", cardController.card_details);
+//API: get recipe details
+app.get("/detail/:id", recipeController.recipe_details);
 
-// app.post("/new", cardController.card_add_post);
+//API: create new recipe
+app.post("/new", recipeController.recipe_add_post);
 
-// //API: delete a card
-// app.delete("/delete/:id", cardController.card_delete);
+//API: delete a recipe
+app.delete("/delete/:id", recipeController.recipe_delete);
 
-// //API: update benefit of a card
-// app.put("/edit/:id", cardController.card_update);
+//API: update a recipe
+app.put("/edit/:id", recipeController.recipe_update);
