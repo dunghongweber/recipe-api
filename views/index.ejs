@@ -1,0 +1,49 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes API</title>
+    <style>
+        body {
+            background-color: antiquewhite;
+        }
+
+        .api_header {
+            text-align: center;
+        }
+
+        .api_content {
+            padding: 10px;
+            border: 5px double cadetblue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="api_header">
+        <h3>Recipes API</h3>
+        <h4>This is an API for recipes app. There are 5 API calls:</h4>
+    </div>
+    <div class="api_content">
+        <p>
+            <strong>/all</strong>
+            <br /><span>Get all the recipes in the database</span>
+            <br /><br />
+            <strong>/detail/:id</strong>
+            <br /><span>Get details of a recipe base on the given id</span>
+            <br /><br />
+            <strong>/new</strong>
+            <br /><span>create a new recipe using data from HTML Body under urlencoded</span>
+            <br /><br />
+            <strong>/delete/:id</strong>
+            <br /><span>delete a recipe using the given id</span>
+            <br /><br />
+            <strong>/edit/:id</strong>
+            <br /><span>update a recipe using the given id</span>
+        </p>
+    </div>
+</body>
+
+</html>
